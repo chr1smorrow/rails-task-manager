@@ -1,0 +1,20 @@
+<h1 style="padding-left: 60px;">Task</h1>
+
+  <div class="task" style="display: flex; align-items: center; padding: 10px;">
+    <% if @task.completed == true %>
+      <i class="far fa-check-square" style="padding: 20px;"></i>
+    <% else %>
+      <i class="far fa-square" style="padding: 20px;"></i>
+    <% end %>
+      <div style="text-align: left;">
+        <h3> <%= @task.title %></h3>
+        <p> <%= @task.details %></p>
+      </div>
+  </div>
+
+  <div style="width: 200px; padding-left: 20px;">
+    <%= link_to "Edit", edit_task_path %>
+  </div>
+  <div style="width: 200px; padding-left: 20px;">
+    <%= link_to "Delete", task_path(@task), method: :delete %>
+  </div>
